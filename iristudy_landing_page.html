@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IRIS & IRISTUDY</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f3f9;
+      color: #3b3349;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #cfc4df;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .logo {
+      max-width: 100px;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav button {
+      margin: 0 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #afa2c3;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    nav button.active {
+      background-color: #8f7db3;
+    }
+    main {
+      padding: 1.5rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    section {
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #4a435a;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #7a7683;
+      padding: 1rem;
+      border-top: 1px solid #ddd;
+      background-color: #f1ebf0;
+    }
+    .quote {
+      font-style: italic;
+      background-color: #f1ebf0;
+      padding: 0.75rem;
+      border-left: 4px solid #cfc4df;
+      margin-bottom: 1rem;
+    }
+    .cta {
+      background-color: #afa2c3;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+  </style>
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+
+      document.querySelectorAll('nav button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.querySelector(`#btn-${id}`).classList.add('active');
+    }
+
+    window.onload = () => {
+      showSection('iris');
+    };
+  </script>
+</head>
+<body>
+  <header>
+    <img src="Iristudy.png" alt="Логотип IRISTUDY" class="logo" />
+    <h1>IRIS & IRISTUDY</h1>
+    <nav>
+      <button id="btn-iris" onclick="showSection('iris')">IRIS</button>
+      <button id="btn-iristudy" onclick="showSection('iristudy')">IRISTUDY</button>
+    </nav>
+  </header>
+  <main>
+    <section id="iris">
+      <h2>IRIS – Первая помощь при психологическом кризисе</h2>
+      <p>IRIS — это команда русскоязычных психологов и волонтёров в Израиле. Мы оказываем экстренную психологическую поддержку детям и взрослым, переживающим тревогу, стресс или кризис.</p>
+      <p>Наши специалисты говорят на вашем языке и понимают ваш культурный контекст.</p>
+      <h3>Как мы можем помочь?</h3>
+      <ul>
+        <li>Бесплатные короткие консультации онлайн</li>
+        <li>Поддержка родителей и детей</li>
+        <li>Помощь новым репатриантам</li>
+        <li>Дыхательные и телесные практики при тревоге</li>
+      </ul>
+      <p><strong>Важно:</strong> мы не заменяем долгосрочную терапию, а предоставляем первую поддержку в трудный момент.</p>
+      <h3>Почему это важно?</h3>
+      <p>Военные действия, переезд, потеря стабильности — всё это влияет на наше психическое здоровье. IRIS создан, чтобы вы не оставались один на один с переживаниями.</p>
+      <h3>Как получить помощь?</h3>
+      <ol>
+        <li>Нажмите кнопку «Записаться на консультацию»</li>
+        <li>Заполните короткую анкету</li>
+        <li>Мы подберём вам специалиста и свяжемся в течение 24 часов</li>
+      </ol>
+      <a href="#" class="cta">Записаться на консультацию</a>
+      <h3>Отзывы</h3>
+      <div class="quote">«Спасибо за тепло и профессионализм. Мне стало легче уже после первой встречи»<br />— Наталья, репатриантка из Хайфы</div>
+      <div class="quote">«Помогли справиться с паникой. Очень чуткое отношение»<br />— Артём, 35 лет</div>
+      <h3>Хотите помочь проекту?</h3>
+      <ul>
+        <li>Стать волонтёром</li>
+        <li>Поддержать пожертвованием</li>
+        <li>Связаться с нами</li>
+      </ul>
+    </section>
+
+    <section id="iristudy">
+      <h2>IRISTUDY – Учебный центр для специалистов</h2>
+      <p>IRISTUDY — это образовательная платформа для русскоязычных психологов и специалистов помогающих профессий. Мы создаём пространство для профессионального роста, обмениваемся знаниями и продвигаем лучшие израильские практики.</p>
+      <h3>Откуда мы пришли?</h3>
+      <p>IRISTUDY — это логичное продолжение проекта IRIS, основанного в 2022 году для экстренной психологической помощи пострадавшим от войны. Со временем появилась потребность в обучении и поддержке самих специалистов — так родился учебный центр.</p>
+      <h3>Что мы предлагаем?</h3>
+      <ul>
+        <li>Курсы повышения квалификации для психологов</li>
+        <li>Введение в израильские методы и протоколы интервенции</li>
+        <li>Тематические вебинары и мастер-классы</li>
+        <li>Практико-ориентированные лекции от ведущих русскоязычных специалистов Израиля</li>
+      </ul>
+      <p>Все курсы проходят онлайн и на русском языке.</p>
+      <h3>Для кого это?</h3>
+      <ul>
+        <li>Практикующие психологи</li>
+        <li>Студенты психологических факультетов</li>
+        <li>Социальные работники</li>
+        <li>Специалисты, работающие с травмой, ПТСР, миграцией и кризисом</li>
+      </ul>
+      <h3>Почему IRISTUDY?</h3>
+      <ul>
+        <li>Проверенные методики от израильских экспертов</li>
+        <li>Актуальные и практически применимые знания</li>
+        <li>Поддержка сообщества коллег</li>
+        <li>Онлайн-доступ из любой точки мира</li>
+      </ul>
+      <h3>Расписание</h3>
+      <p>Скоро на сайте появится актуальное расписание курсов и мероприятий.</p>
+      <h3>Начните сегодня</h3>
+      <p>Ознакомьтесь с курсами, выберите направление и присоединяйтесь к профессиональному сообществу.</p>
+      <a href="#" class="cta">Связаться с нами</a>
+    </section>
+  </main>
+  <footer>
+    О проекте | Контакты | Конфиденциальность<br />
+    © 2025 IRIS & IRISTUDY. Все права защищены.
+  </footer>
+</body>
+</html>
